@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tool paint</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="tools">
+		<button onclick="undo()">undo</button>
+		<button onclick="redo()">redo</button>
+		<button onclick="setTool('pen')">pen</button>
+		<button onclick="setTool('line')">line</button>
+		<button onclick="setTool('rect')">rect</button>
+
+		<button onclick="changeColor('#ff0000')">red</button>
+		<button onclick="changeColor('#000000')">black</button>
+		<button onclick="changeColor('#00ff00')">green</button>
+
+		<button onclick="changeLineWidth(1)">1</button>
+		<button onclick="changeLineWidth(2)">2</button>
+		<button onclick="changeLineWidth(3)">3</button>
+		<button onclick="changeLineWidth(4)">4</button>
+		<button onclick="changeLineWidth(5)">5</button>
+	</div>
+	<canvas id="board"></canvas>
+</body>
+<script type="text/javascript" src="paint.js"></script>
+<script type="text/javascript"ty>
+	function changeColor(color){
+		p.color = color;
+	}
+	function changeLineWidth(lineWidth) {
+		p.lineWidth = lineWidth;
+	}
+	function undo(){
+		p.undo();
+	}
+	function redo(){
+		p.redo();
+	}
+	function setTool(tool){
+		p.tool = tool;
+	}
+</script>
+</html>
